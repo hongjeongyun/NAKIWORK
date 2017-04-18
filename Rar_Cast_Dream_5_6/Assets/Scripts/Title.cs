@@ -9,6 +9,12 @@ public class Title : MonoBehaviour {
     public GameObject go_PressAnyButtonText;
     public GameObject go_Cursor;
 
+    void Awake()
+    {
+        //Time.captureFramerate = 60;
+        //Application.targetFrameRate = 60;
+    }
+
     void Update()
 	{
 		if (true == go_PressAnyButtonText.activeInHierarchy && true == Input.anyKeyDown)

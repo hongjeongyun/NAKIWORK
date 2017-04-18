@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-        Time.captureFramerate = 60;
+        //Time.captureFramerate = 60;
         //Application.targetFrameRate = 60;
         playerTransform = GameObject.Find (playerName).GetComponent<Transform> ();
 	}

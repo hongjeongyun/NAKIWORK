@@ -6,15 +6,14 @@ public class Timer : MonoBehaviour {
 	public static float fTime;
 	public TextMesh selfComponent;
 
-
 	void Start () 
 	{
-		fTime = 181.0f;
+        fTime = 181.0f;
 		selfComponent.text = "";
 		StartCoroutine (timerUpdate ());
 	}
-	
-	IEnumerator timerUpdate()
+
+    IEnumerator timerUpdate()
 	{
 		while (true) 
 		{
@@ -22,7 +21,7 @@ public class Timer : MonoBehaviour {
 
 			if(fTime != 0)
 			{
-				fTime -= Time.fixedDeltaTime * 0.5f;
+				fTime -= Time.deltaTime * 0.5f;
 			    
 				if(fTime <=0)
 					fTime = 0;
