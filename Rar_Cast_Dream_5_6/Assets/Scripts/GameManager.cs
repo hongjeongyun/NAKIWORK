@@ -9,20 +9,28 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
+        //QualitySettings.vSyncCount = 0;
+
         //Time.captureFramerate = 60;
         //Application.targetFrameRate = 60;
         playerTransform = GameObject.Find (playerName).GetComponent<Transform> ();
 	}
-	   
+    
+    /*	   
 	void Update()
 	{
-		if(Valken.isDie == true)
-		{
-			StartCoroutine(GameOver());
-		}
-	}
+		
+	}*/
 
-	IEnumerator GameOver()
+    void FixedUpdate()
+    {
+        if (Valken.isDie == true)
+        {
+            StartCoroutine(GameOver());
+        }
+    }
+
+    IEnumerator GameOver()
 	{
 		yield return new WaitForSeconds (2.0f);
         //Application.LoadLevel ("GameOverScene");
